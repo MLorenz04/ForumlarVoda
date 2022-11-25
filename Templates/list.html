@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%; background: rgb(167,153,255);
+background: linear-gradient(90deg, rgba(167,153,255,1) 0%, rgba(50,168,255,1) 100%);">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výpis studentů</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        html,head,body {
+        height:100%;
+        width:100%;
+        background: rgb(167,153,255);
+        background: linear-gradient(90deg, rgba(167,153,255,1) 0%, rgba(50,168,255,1) 100%);
+        }
+        body {
+        display:flex;
+        flex-direction:column;
+        align-items:center
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center">
+<div class="card">
+    <div class="card-body">
+<h1 class="py-4 text-center">Výpis uživatelů</h1>
+<div class="list">
+<table class="table">
+     <thead>
+    <tr>
+      <th scope="col">Jméno a příjmení</th>
+        <th scope="col"> Kamarád </th>
+        <th scope="col"> Třída </th>
+    </tr>
+  </thead>
+    <tbody>
+{% for line in Lines %}
+<tr>
+ <th>{{line[0]}}</th><th> {{line[1]}}</th> <th>{{line[2]}}</th>
+        </tr>
+{% endfor %}
+        </tbody>
+</table>
+</div>
+        </div>
+    </div>
+<a href="./"> <button class="btn btn-primary my-4"> Domů </button> </a>
+</body>
